@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Run Mate – Nakuru | Fast Errands & Delivery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #fef9f0 0%, #fff7f0 100%);
+      color: #1f2937;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: #6b5a4a;
+      margin-bottom: 2.5rem;
+      max-width: 680px;
+    }
+
+    /* Purple + Orange + Yellow + Green accents */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+      color: white;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 60px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+      border: none;
+    }
+
+    .btn-primary i {
+      font-size: 1.4rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, #7c3aed, #5b21b6);
+      box-shadow: 0 14px 28px rgba(139, 92, 246, 0.4);
+    }
+
+    .btn-outline {
+      border: 2px solid #f59e0b;
+      background: transparent;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #f59e0b;
+      text-decoration: none;
+      transition: 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      background: #f59e0b;
+      color: white;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 2px solid #fde68a;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(4px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #7c3aed, #ea580c, #fbbf24);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .logo p {
+      font-size: 0.8rem;
+      color: #ea580c;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      margin-left: 28px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #4c1d95;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #f59e0b;
+    }
+
+    .hero {
+      padding: 64px 0 48px;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: #fef3c7;
+      color: #b45309;
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.4rem;
+      margin-bottom: 1rem;
+      color: #4c1d95;
+    }
+
+    .hero-highlight {
+      color: #ea580c;
+      border-bottom: 3px solid #fbbf24;
+      display: inline-block;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #4b5563;
+      margin: 1rem 0 2rem;
+      max-width: 540px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      margin-top: 28px;
+    }
+
+    .stat span {
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: #7c3aed;
+    }
+
+    .services {
+      background: white;
+      padding: 70px 0;
+      border-radius: 48px 48px 0 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      background: linear-gradient(135deg, #7c3aed, #ea580c);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 28px;
+      padding: 28px 22px;
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.05);
+      transition: 0.25s ease;
+      border: 1px solid #fed7aa;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: #fbbf24;
+      box-shadow: 0 20px 30px -12px rgba(139, 92, 246, 0.15);
+    }
+
+    .service-icon {
+      font-size: 2.3rem;
+      background: linear-gradient(135deg, #fef3c7, #fed7aa);
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      color: #ea580c;
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: #4c1d95;
+    }
+
+    .price-tag {
+      display: inline-block;
+      background: #fef3c7;
+      padding: 6px 14px;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #b45309;
+      margin-top: 16px;
+    }
+
+    .how-it-works {
+      padding: 70px 0;
+      background: #faf5ff;
+    }
+
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .step {
+      flex: 1;
+      min-width: 170px;
+      text-align: center;
+    }
+
+    .step-number {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 60px;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: white;
+      box-shadow: 0 6px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .price-section {
+      background: white;
+      padding: 70px 0;
+    }
+
+    .price-grid {
+      display: flex;
+      flex-direction: column;
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fefaf5;
+      border-radius: 36px;
+      border: 1px solid #fed7aa;
+      overflow: hidden;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 28px;
+      border-bottom: 1px solid #ffe4b5;
+      font-weight: 500;
+    }
+
+    .price-row span:first-child {
+      font-weight: 600;
+      color: #4c1d95;
+    }
+
+    .price-row span:last-child {
+      font-weight: 800;
+      color: #ea580c;
+    }
+
+    .note {
+      padding: 20px 28px;
+      background: #fff7ed;
+      font-size: 0.85rem;
+      color: #92400e;
+      text-align: center;
+    }
+
+    .why-choose {
+      background: linear-gradient(135deg, #4c1d95, #6d28d9);
+      color: white;
+      padding: 64px 0;
+    }
+
+    .features-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      margin-top: 32px;
+    }
+
+    .feature-item {
+      flex: 1;
+      background: rgba(251, 191, 36, 0.1);
+      padding: 24px;
+      border-radius: 28px;
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+    }
+
+    .feature-item i {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      color: #fbbf24;
+    }
+
+    .feature-item h3 {
+      color: #fde68a;
+    }
+
+    .contact-cta {
+      padding: 70px 0;
+      text-align: center;
+    }
+
+    .contact-card {
+      background: linear-gradient(145deg, #ffffff, #fef7e0);
+      border-radius: 56px;
+      padding: 48px 32px;
+      box-shadow: 0 30px 40px -20px rgba(139, 92, 246, 0.2);
+      border: 1px solid #fbbf24;
+    }
+
+    .double-phones {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 24px 0 16px;
+    }
+
+    .phone-chip {
+      background: linear-gradient(135deg, #fef3c7, #ffe4b5);
+      padding: 10px 24px;
+      border-radius: 60px;
+      font-weight: 700;
+      color: #b45309;
+    }
+
+    .phone-chip i {
+      color: #25D366;
+      margin-right: 8px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #25D366;
+      padding: 14px;
+      border-radius: 60px;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+    }
+
+    .whatsapp-float a {
+      color: white;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 4px 12px;
+    }
+
+    .whatsapp-float span {
+      font-size: 1rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    footer {
+      background: #1e1b4b;
+      color: #cbd5e1;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    @media (max-width: 780px) {
+      .container {
+        padding: 0 24px;
+      }
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+      .nav-links a {
+        margin-left: 14px;
+        font-size: 0.9rem;
+      }
+      .hero-grid {
+        flex-direction: column;
+      }
+      .price-row {
+        flex-direction: column;
+        gap: 6px;
+      }
+      .btn-primary {
+        padding: 12px 24px;
+      }
+      .whatsapp-float span {
+        display: none;
+      }
+      .whatsapp-float a {
+        padding: 6px;
+      }
+    }
+
+    .promise-box {
+      margin-top: 40px;
+      background: rgba(251, 191, 36, 0.15);
+      border-radius: 28px;
+      padding: 24px;
+      text-align: center;
+      border-left: 4px solid #fbbf24;
+    }
+
+    .btn-wa-secondary {
+      background: #25D366;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 60px;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="whatsapp-float">
+  <a href="https://wa.me/254796383960?text=Hello%20Run%20Mate!%20I%20need%20an%20errand%20in%20Nakuru%20🏃‍♂️" target="_blank">
+    <i class="fab fa-whatsapp"></i> <span>CHAT NOW</span>
+  </a>
+</div>
+
+<header>
+  <div class="container nav-flex">
+    <div class="logo">
+      <h1>RUN MATE</h1>
+      <p>⚡ Nakuru • we run it so you don't have to</p>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a href="#how">How it works</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-bolt"></i> 🟣🟡🟠 Nakuru's fastest errand partner</div>
+        <h1>Run Mate – Nakuru<br>We run it so <span class="hero-highlight">you don't have to.</span></h1>
+        <p>Fast, reliable errands and delivery services across Nakuru. We help busy people save time by handling everyday tasks quickly, safely, and professionally.</p>
+        <a href="https://wa.me/254796383960?text=Hi%20Run%20Mate!%20I'd%20like%20to%20book%20an%20errand%20in%20Nakuru%20🏃" class="btn-primary" target="_blank">
+          <i class="fab fa-whatsapp"></i> BOOK NOW ON WHATSAPP
+        </a>
+        <div class="hero-stats">
+          <div class="stat"><span>&lt;10min</span><br>response</div>
+          <div class="stat"><span>⭐ 4.9</span><br>customer love</div>
+          <div class="stat"><span>Same-day</span><br>delivery</div>
+        </div>
+      </div>
+      <div style="flex:0.8; min-width: 220px; text-align:center;">
+        <div style="background: linear-gradient(145deg, #fde68a, #fed7aa); border-radius: 68px; padding: 30px 20px;">
+          <i class="fas fa-running" style="font-size: 5rem; color: #7c3aed;"></i>
+          <p style="font-weight: bold; color:#4c1d95; margin-top:10px;">🏃‍♂️ Run Mate Express</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>🚀 Our Services</h2>
+        <p class="section-subtitle">We take care of your daily errands — purple speed, orange energy, yellow warmth, green trust.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="service-card"><div class="service-icon"><i class="fas fa-box"></i></div><h3>Parcel pickup & delivery</h3><p>Fast & secure parcel transport across Nakuru. Door-to-door.</p><span class="price-tag">from KES 400</span></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-shopping-basket"></i></div><h3>Grocery & personal shopping</h3><p>We shop your list, deliver fresh goods same day.</p><span class="price-tag">from KES 500</span></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div><h3>Bill payments</h3><p>Electricity, water, internet — we queue or pay online for you.</p><span class="price-tag">from KES 200</span></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-users"></i></div><h3>Queueing services</h3><p>Skip the wait. We stand in line for you anywhere in Nakuru.</p><span class="price-tag">KES 200–300</span></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-home"></i></div><h3>House viewing & searching</h3><p>Visit properties, take photos, video calls & reporting.</p><span class="price-tag">KES 1,000–2,000</span></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-concierge-bell"></i></div><h3>General errands</h3><p>Anything you need — documents, pharmacy, laundry drop-off, etc.</p><span class="price-tag">KES 250–300</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>⚡ How It Works</h2>
+        <p class="section-subtitle">Three vibrant steps to freedom from errands</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-number">1</div><h3>Send request</h3><p>via WhatsApp with details & location</p></div>
+        <div class="step"><div class="step-number">2</div><h3>Instant price</h3><p>confirmation & runner assigned</p></div>
+        <div class="step"><div class="step-number">3</div><h3>Done & delivered</h3><p>you relax, we deliver safely</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="price-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>💰 Clear, affordable pricing</h2>
+        <p class="section-subtitle">No hidden fees — pay for what you need.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-row"><span>📦 Parcel Pickup (Transport Included)</span><span>KES 400 – 500</span></div>
+        <div class="price-row"><span>🛒 Shopping Services</span><span>KES 500 – 700</span></div>
+        <div class="price-row"><span>⏳ Queueing Services</span><span>KES 200 – 300</span></div>
+        <div class="price-row"><span>💼 Office Errands (corporate)</span><span>KES 1,000 – 1,500</span></div>
+        <div class="price-row"><span>🏡 House Viewing & Searching</span><span>KES 1,000 – 2,000</span></div>
+        <div class="price-row"><span>✨ General Errands</span><span>KES 250 – 300</span></div>
+        <div class="note"><i class="fas fa-road"></i> Prices may vary based on distance, urgency & task complexity. We confirm first via WhatsApp.<br>⭐ Errands starting from just KES 200</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-choose">
+    <div class="container">
+      <div class="section-header" style="color: white; text-align: left;">
+        <h2 style="color:#fbbf24;">💬 Why Choose Run Mate?</h2>
+        <p style="opacity:0.9">Trusted by students, workers & families in Nakuru</p>
+      </div>
+      <div class="features-flex">
+        <div class="feature-item"><i class="fas fa-stopwatch"></i><h3>Fast response</h3><p>Under 10 minutes reply time on WhatsApp, same-day execution.</p></div>
+        <div class="feature-item"><i class="fas fa-shield-alt"></i><h3>Safe & reliable</h3><p>Professionally vetted runners, handled with care.</p></div>
+        <div class="feature-item"><i class="fas fa-map-marker-alt"></i><h3>📍 Areas we serve</h3><p>Nakuru Town, Milimani, Naka Estate, Section 58, London, Free Area, Pipeline, Lanet, Kiamaina + nearby.</p></div>
+      </div>
+      <div class="promise-box">
+        <i class="fas fa-heart" style="color:#fbbf24; font-size: 1.6rem;"></i> 
+        <strong style="font-size: 1.2rem;">Our Promise:</strong> We treat your errands like our own. Safe, fast, and handled with care — every time.
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-cta">
+    <div class="container">
+      <div class="contact-card">
+        <h2 style="background: linear-gradient(135deg, #7c3aed, #ea580c); background-clip: text; -webkit-background-clip: text; color: transparent;">📞 Let's get your errands done</h2>
+        <p style="font-size:1.2rem; margin-bottom: 12px; color:#4c1d95;">Reach us via WhatsApp for instant booking & support</p>
+        <div class="double-phones">
+          <span class="phone-chip"><i class="fab fa-whatsapp"></i> 0796 383 960</span>
+          <span class="phone-chip"><i class="fab fa-whatsapp"></i> 0794 160 787</span>
+        </div>
+        <p style="margin: 8px 0 6px;">📍 Nakuru, Kenya  |  ⏱ Available daily (early morning to late evening)</p>
+        <a href="https://wa.me/254796383960?text=Hello%20Run%20Mate!%20I%20need%20help%20with%20an%20errand%20👉" class="btn-primary" target="_blank" style="margin: 24px auto 0; display: inline-flex;">
+          <i class="fab fa-whatsapp"></i> CLICK HERE TO CHAT NOW
+        </a>
+        <div style="margin-top: 32px; border-top: 2px solid #fde68a; padding-top: 28px;">
+          <i class="fas fa-briefcase" style="color:#7c3aed;"></i> <strong>💼 For Businesses:</strong> Corporate & business clients welcome. Office runs, deliveries, urgent errands — done professionally. Request a corporate rate via WhatsApp.
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p><strong>Run Mate – Nakuru</strong> | 🟣🟡🟢🟠 We help you focus on what matters most.</p>
+    <p style="margin-top: 12px; font-size: 0.8rem;">© 2025 Run Mate – Fast, reliable errands across Nakuru. All services on-demand.</p>
+  </div>
+</footer>
+
+</body>
+</html>
