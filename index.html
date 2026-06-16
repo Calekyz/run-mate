@@ -20,7 +20,7 @@
   <!-- Professional Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- ========== ADDED FRONT PAGE STYLES ========== -->
+  <!-- ========== FRONT PAGE STYLES ========== -->
   <style>
     /* Front Page Overlay – covers everything */
     #frontPageOverlay {
@@ -110,6 +110,22 @@
     .front-btn i {
       font-size: 1.3rem;
     }
+    /* Two trade options – side by side */
+    .front-trade-options {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+      max-width: 400px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .front-trade-options .front-btn {
+      flex: 1;
+      min-width: 140px;
+      max-width: 100%;
+      padding: 14px 16px;
+      font-size: 0.95rem;
+    }
     .front-btn-trade {
       background: linear-gradient(135deg, #0064ff, #0050cc);
       color: white;
@@ -118,6 +134,15 @@
     .front-btn-trade:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 30px rgba(0,100,255,0.5);
+    }
+    .front-btn-trade-alt {
+      background: linear-gradient(135deg, #00b894, #00a381);
+      color: white;
+      box-shadow: 0 8px 20px rgba(0,184,148,0.3);
+    }
+    .front-btn-trade-alt:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0,184,148,0.5);
     }
     .front-btn-telegram {
       background: linear-gradient(135deg, #0088cc, #006699);
@@ -137,7 +162,6 @@
       transform: translateY(-3px);
       box-shadow: 0 12px 30px rgba(255,51,51,0.5);
     }
-    /* Small hint */
     .front-hint {
       margin-top: 28px;
       font-size: 0.7rem;
@@ -180,6 +204,11 @@
         font-size: 1rem;
         padding: 14px 20px;
       }
+      .front-trade-options .front-btn {
+        min-width: 120px;
+        font-size: 0.85rem;
+        padding: 12px 12px;
+      }
       .whatsapp-float {
         width: 54px;
         height: 54px;
@@ -195,7 +224,7 @@
 </head>
 <body>
 
-<!-- ========== ADDED FRONT PAGE OVERLAY ========== -->
+<!-- ========== FRONT PAGE OVERLAY ========== -->
 <div id="frontPageOverlay">
   <div class="front-content">
     <img src="https://i.postimg.cc/xCsZxjGF/Chat-GPT-Image-Apr-17-2026-10-54-53-AM.png" alt="Calekyz FX" class="front-logo">
@@ -203,9 +232,16 @@
     <div class="front-sub">Welcome to professional trading infrastructure.<br>Choose your entry point below.</div>
     
     <div class="front-buttons">
-      <a href="https://matchestool.site" target="_blank" class="front-btn front-btn-trade">
-        <i class="fas fa-rocket"></i> Trade on Site
-      </a>
+      <!-- Trade options: two buttons side by side -->
+      <div class="front-trade-options">
+        <a href="https://app.calekyz.com" target="_blank" class="front-btn front-btn-trade">
+          <i class="fas fa-rocket"></i> app.calekyz.com
+        </a>
+        <a href="https://matchestool.site" target="_blank" class="front-btn front-btn-trade-alt">
+          <i class="fas fa-chart-line"></i> matchestool.site
+        </a>
+      </div>
+      
       <a href="https://t.me/calekyz" target="_blank" class="front-btn front-btn-telegram">
         <i class="fab fa-telegram-plane"></i> Join Telegram Community
       </a>
@@ -223,7 +259,6 @@
 </a>
 
 <!-- ========== YOUR EXISTING CODE (unchanged) ========== -->
-<!-- The entire content you sent – I kept it exactly as is -->
 <div class="page-loader" id="pageLoader">
   <canvas id="candleCanvas"></canvas>
   <div class="loader-content">
