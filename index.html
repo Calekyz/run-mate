@@ -20,7 +20,7 @@
   <!-- Professional Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- ========== FRONT PAGE STYLES (added) ========== -->
+  <!-- ========== FRONT PAGE STYLES ========== -->
   <style>
     /* Front Page Overlay – covers everything */
     #frontPageOverlay {
@@ -169,13 +169,13 @@
       opacity: 0.7;
     }
 
-    /* Floating WhatsApp button (always visible) */
-    .whatsapp-float {
+    /* Floating Telegram button (always visible) */
+    .telegram-float {
       position: fixed;
       bottom: 30px;
       right: 30px;
       z-index: 999999;
-      background: #25D366;
+      background: #0088cc;
       color: white;
       border-radius: 50%;
       width: 60px;
@@ -184,13 +184,13 @@
       align-items: center;
       justify-content: center;
       font-size: 32px;
-      box-shadow: 0 8px 20px rgba(37,211,102,0.4);
+      box-shadow: 0 8px 20px rgba(0,136,204,0.4);
       text-decoration: none;
       transition: all 0.3s ease;
     }
-    .whatsapp-float:hover {
+    .telegram-float:hover {
       transform: scale(1.1);
-      box-shadow: 0 12px 30px rgba(37,211,102,0.6);
+      box-shadow: 0 12px 30px rgba(0,136,204,0.6);
     }
     /* Responsive */
     @media (max-width: 600px) {
@@ -209,7 +209,7 @@
         font-size: 0.85rem;
         padding: 12px 12px;
       }
-      .whatsapp-float {
+      .telegram-float {
         width: 54px;
         height: 54px;
         font-size: 28px;
@@ -222,7 +222,7 @@
     }
   </style>
 
-  <!-- ========== YOUR ORIGINAL SITE STYLES (fully restored) ========== -->
+  <!-- ========== ORIGINAL SITE STYLES (updated) ========== -->
   <style>
     * {
       margin: 0;
@@ -352,7 +352,7 @@
     .social-circle:nth-child(1) { animation-delay: 0.05s; }
     .social-circle:nth-child(2) { animation-delay: 0.15s; }
     .social-circle:nth-child(3) { animation-delay: 0.25s; }
-    .social-circle:nth-child(4) { animation-delay: 0.35s; }
+    /* removed WhatsApp circle, so only 3 */
     @keyframes fadeInScale { to { opacity: 1; transform: scale(1); } }
     .social-circle:hover { transform: translateY(-3px); }
     .social-circle.telegram { color: #0088cc; }
@@ -361,8 +361,7 @@
     .social-circle.tiktok:hover { background: #000; color: #ff0040; }
     .social-circle.youtube { color: #ff0000; }
     .social-circle.youtube:hover { background: #ff0000; color: white; }
-    .social-circle.whatsapp { color: #25D366; }
-    .social-circle.whatsapp:hover { background: #25D366; color: white; }
+    /* no whatsapp */
     .hero { padding: 48px 0 40px; }
     .hero-grid { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; justify-content: space-between; }
     .hero-content { flex: 1; min-width: 280px; }
@@ -408,8 +407,8 @@
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 100, 255, 0.3); }
     .btn-secondary { background: rgba(30, 41, 59, 0.8); color: #e2e8f0; border: 1px solid #334155; }
     .btn-secondary:hover { background: #334155; transform: translateY(-2px); }
-    .btn-whatsapp { background: #25D366; color: #0a0f1c; }
-    .btn-whatsapp:hover { background: #20bd59; transform: translateY(-2px); }
+    .btn-telegram { background: #0088cc; color: white; }
+    .btn-telegram:hover { background: #006699; transform: translateY(-2px); }
     .btn-gold { background: linear-gradient(135deg, #ff3333, #cc0000); color: white; }
     .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255, 51, 51, 0.3); }
     .forex-area { padding: 48px 40px; margin: 48px 0; text-align: center; }
@@ -451,7 +450,7 @@
     .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; background: rgba(0,0,0,0.4); border: 1px solid rgba(0,100,255,0.3); border-radius: 12px; color: white; font-family: inherit; }
     .payment-instructions { background: rgba(0,100,255,0.1); padding: 12px; border-radius: 12px; margin: 12px 0; font-size: 0.8rem; display: none; }
     .payment-instructions.show { display: block; }
-    .btn-buy { width: 100%; justify-content: center; padding: 14px; font-size: 1rem; background: linear-gradient(135deg, #25D366, #128C7E); margin-top: 16px; }
+    .btn-buy { width: 100%; justify-content: center; padding: 14px; font-size: 1rem; background: linear-gradient(135deg, #0088cc, #006699); margin-top: 16px; }
     .close-kairon-btn { background: rgba(255,255,255,0.05); border: none; padding: 10px 20px; border-radius: 40px; color: #cbd5e1; cursor: pointer; margin-top: 12px; width: 100%; font-weight: 500; }
     .close-kairon-btn:hover { background: #ff4466; color: white; }
     .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 10000; justify-content: center; align-items: center; }
@@ -466,7 +465,7 @@
     .scroll-top.visible { opacity: 1; }
     .scroll-top:hover { transform: scale(1.05); }
     .smart-chat-container { position: fixed; bottom: 100px; right: 25px; z-index: 9999; }
-    .smart-chat-btn { width: 65px; height: 65px; border-radius: 50%; background: linear-gradient(135deg, #0064ff, #25D366); cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; position: relative; border: 2px solid rgba(255,255,255,0.2); z-index: 9999; }
+    .smart-chat-btn { width: 65px; height: 65px; border-radius: 50%; background: linear-gradient(135deg, #0064ff, #0088cc); cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; position: relative; border: 2px solid rgba(255,255,255,0.2); z-index: 9999; }
     .smart-chat-btn i { font-size: 28px; color: white; }
     .smart-chat-btn:hover { transform: scale(1.1); }
     .chat-menu { position: absolute; bottom: 80px; right: 0; width: 280px; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(20px); border-radius: 20px; border: 1px solid rgba(0, 100, 255, 0.3); box-shadow: 0 10px 40px rgba(0,0,0,0.4); padding: 16px; display: none; flex-direction: column; gap: 12px; animation: slideUp 0.3s ease; }
@@ -477,8 +476,8 @@
     .chat-option span { font-size: 0.9rem; font-weight: 500; }
     .ai-option { background: linear-gradient(135deg, rgba(0,100,255,0.2), rgba(255,51,51,0.1)); border-color: rgba(0,100,255,0.3); color: #60a5fa; }
     .ai-option:hover { background: linear-gradient(135deg, rgba(0,100,255,0.4), rgba(255,51,51,0.2)); transform: translateX(-5px); }
-    .whatsapp-option { background: rgba(37, 211, 102, 0.15); border-color: rgba(37, 211, 102, 0.3); color: #25D366; }
-    .whatsapp-option:hover { background: rgba(37, 211, 102, 0.3); transform: translateX(-5px); }
+    .telegram-option { background: rgba(0,136,204,0.15); border-color: rgba(0,136,204,0.3); color: #0088cc; }
+    .telegram-option:hover { background: rgba(0,136,204,0.3); transform: translateX(-5px); }
     .floating-social-container { position: fixed; left: 20px; top: 50%; transform: translateY(-50%); z-index: 10001; cursor: grab; user-select: none; touch-action: none; }
     .social-float-btn { width: 56px; height: 56px; background: linear-gradient(145deg, #1e293b, #0f172a); border-radius: 30px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #ff3333; box-shadow: 0 8px 24px rgba(0,0,0,0.4); border: 1px solid rgba(255,51,51,0.6); transition: 0.1s linear; cursor: pointer; }
     .social-float-menu { position: absolute; left: 68px; top: 0; background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(20px); border-radius: 28px; padding: 12px 16px; display: none; flex-direction: column; gap: 10px; min-width: 210px; border: 1px solid rgba(255,51,51,0.3); z-index: 10002; }
@@ -489,7 +488,31 @@
     body.light-mode .social-float-item { background: rgba(0, 0, 0, 0.05); color: #1e293b; }
     body.light-mode .social-float-item:hover { background: #0064ff; color: white; }
     @media (max-width: 680px) { .floating-social-container { left: 12px; } .social-float-btn { width: 48px; height: 48px; font-size: 24px; } .social-float-menu { left: 58px; min-width: 185px; } }
-    @media (max-width: 768px) { .container { padding: 0 20px; } .hero h1 { font-size: 2.2rem; } .navbar { flex-direction: column; border-radius: 32px; } .card { padding: 28px; } .hero-grid { text-align: center; } .hero p { margin-left: auto; margin-right: auto; } .button-group { justify-content: center; } .float-btn { padding: 6px 16px; font-size: 0.7rem; } .loader-content { padding: 32px 40px; } .active-number { font-size: 1.5rem; } .price-ticker { gap: 12px; font-size: 0.6rem; } .smart-chat-container { bottom: 80px; right: 20px; } .smart-chat-btn { width: 55px; height: 55px; } .smart-chat-btn i { font-size: 24px; } .chat-menu { width: 260px; right: 0; bottom: 70px; } .class-card { margin: 24px 16px; } .btn-class { width: 100%; } .prices-container { flex-direction: column; gap: 20px; } .kairon-ea-card { padding: 24px; } }
+    @media (max-width: 768px) { 
+      .container { padding: 0 20px; } 
+      .hero h1 { font-size: 2.2rem; } 
+      .navbar { flex-direction: column; border-radius: 32px; padding: 14px 16px; } 
+      .nav-buttons { justify-content: center; } 
+      .float-btn { padding: 6px 12px; font-size: 0.7rem; } 
+      .card { padding: 28px; } 
+      .hero-grid { text-align: center; } 
+      .hero p { margin-left: auto; margin-right: auto; } 
+      .button-group { justify-content: center; } 
+      .loader-content { padding: 32px 40px; } 
+      .active-number { font-size: 1.5rem; } 
+      .price-ticker { gap: 12px; font-size: 0.6rem; } 
+      .smart-chat-container { bottom: 80px; right: 20px; } 
+      .smart-chat-btn { width: 55px; height: 55px; } 
+      .smart-chat-btn i { font-size: 24px; } 
+      .chat-menu { width: 260px; right: 0; bottom: 70px; } 
+      .class-card { margin: 24px 16px; } 
+      .btn-class { width: 100%; } 
+      .prices-container { flex-direction: column; gap: 20px; } 
+      .kairon-ea-card { padding: 24px; } 
+      .forex-area { padding: 24px 16px; } 
+      .trust-badge { flex-direction: column; } 
+      .affiliate-popup { padding: 20px; } 
+    }
     body.light-mode .hero p, body.light-mode .service-card p, body.light-mode .card p { color: #334155; }
     body.light-mode .api-powered-text, body.light-mode .api-powered-text strong { color: #0064ff; }
     body.light-mode footer { color: #475569; }
@@ -498,6 +521,7 @@
     body.light-mode .modal-content input, body.light-mode .modal-content textarea, body.light-mode .modal-content select, body.light-mode .kairon-popup input, body.light-mode .kairon-popup select, body.light-mode .kairon-popup textarea { background: rgba(0, 0, 0, 0.05); color: #1e293b; }
     .contact-choice { display: flex; gap: 20px; margin: 16px 0; justify-content: center; }
     .contact-choice label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+    /* Only Telegram option visible, so we hide the other? Actually we remove the WhatsApp option from HTML, so fine. */
   </style>
 </head>
 <body>
@@ -531,12 +555,12 @@
   </div>
 </div>
 
-<!-- ========== FLOATING WHATSAPP BUTTON (always visible) ========== -->
-<a href="https://wa.me/254799045699?text=Hello%20Calekyz%2C%20I%20need%20assistance" target="_blank" class="whatsapp-float" aria-label="WhatsApp Support">
-  <i class="fab fa-whatsapp"></i>
+<!-- ========== FLOATING TELEGRAM BUTTON (always visible) ========== -->
+<a href="https://t.me/mentor_calekyz" target="_blank" class="telegram-float" aria-label="Telegram Support">
+  <i class="fab fa-telegram-plane"></i>
 </a>
 
-<!-- ========== YOUR EXISTING CODE (unchanged – fully restored) ========== -->
+<!-- ========== MAIN CONTENT ========== -->
 <div class="page-loader" id="pageLoader">
   <canvas id="candleCanvas"></canvas>
   <div class="loader-content">
@@ -577,7 +601,7 @@
       <a href="https://t.me/calekyz254" target="_blank" class="social-circle telegram"><i class="fab fa-telegram-plane"></i></a>
       <a href="https://tiktok.com/@calekyz.com" target="_blank" class="social-circle tiktok"><i class="fab fa-tiktok"></i></a>
       <a href="https://youtube.com/@calekyztradingsite?si=TJx4ngIskL43R4d7" target="_blank" class="social-circle youtube"><i class="fab fa-youtube"></i></a>
-      <a href="https://whatsapp.com/channel/0029Vb6NOev89inkCXWzsp3D" target="_blank" class="social-circle whatsapp"><i class="fab fa-whatsapp"></i></a>
+      <!-- WhatsApp circle removed -->
     </div>
   </div>
 
@@ -589,7 +613,8 @@
         <p>Enterprise-grade API tools for binary and forex markets. Low-latency execution, automated strategies, and real-time signals.</p>
         <div class="button-group">
           <a href="https://track.deriv.com/_zuT8t8IlEmj1hit6RV3zsGNd7ZgqdRLk/1/" target="_blank" class="btn btn-primary">📈 CREATE DERIV ACCOUNT</a>
-          <a href="https://www.puprime.partners/forex-trading-account/?affid=7389780" target="_blank" class="btn btn-secondary">💱 CREATE FOREX ACCOUNT</a>
+          <!-- PU Prime replaced with HFM -->
+          <a href="https://www.hfm.com/ke/en/?refid=30490981" target="_blank" class="btn btn-secondary">💱 CREATE FOREX ACCOUNT</a>
         </div>
         <div class="api-powered-badge">
           <span>⚡</span>
@@ -608,7 +633,7 @@
     <p style="font-size: 0.7rem; color: #ff6666; margin-top: 8px;">Advanced Market Prediction + Bot Integration — $65 USD</p>
   </div>
 
-  <!-- DERIV API SECTION - Updated third-party link to matchestool.site -->
+  <!-- DERIV API SECTION - unchanged -->
   <div id="deriv-tools">
     <div class="card">
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px;">
@@ -639,7 +664,7 @@
         <div class="profit-split">💰 40% / 60% Split</div>
         <p style="color: #cbd5e1; font-size: 0.9rem;">You keep 60% of profits. I earn 40% <strong>only after you make profit</strong>. No profit = no fee.</p>
         <div class="risk-warning"><strong>⚠️ IMPORTANT RISK DISCLOSURE</strong><br>Trading forex and CFDs carries substantial risk of loss (up to 100% of invested capital). Past performance does not guarantee future results. Account management does NOT eliminate market risk. Only invest capital you can afford to lose entirely. By requesting this service, you acknowledge these risks.</div>
-        <button class="btn btn-gold" id="copyTradingBtn">📋 REQUEST SERVICE → WhatsApp/Telegram</button>
+        <button class="btn btn-gold" id="copyTradingBtn">📋 REQUEST SERVICE → Telegram</button>
       </div>
       <div style="text-align: center; min-width: 150px;"><i class="fas fa-chart-line" style="font-size: 80px; color: #ff3333; opacity: 0.7;"></i><p style="margin-top: 12px; font-size: 0.7rem; color:#5a6a82;">Managed Accounts</p></div>
     </div>
@@ -653,7 +678,7 @@
         <h2 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 16px;">Request a <span style="color:#60a5fa;">Custom Trading Bot</span></h2>
         <p style="color: #cbd5e1; line-height: 1.6;">Need a bot for a specific strategy? MT4, MT5, or Deriv? Describe your idea and I'll build it for you.</p>
         <div style="margin: 20px 0;"><div style="display: flex; gap: 12px; flex-wrap: wrap;"><span style="background: rgba(0,100,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem;">📊 Custom Indicators</span><span style="background: rgba(0,100,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem;">🤖 Automated Entry/Exit</span><span style="background: rgba(0,100,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem;">⚡ Risk Management Rules</span></div></div>
-        <button class="btn btn-primary" id="customBotBtn">🤖 SUBMIT BOT IDEA → WhatsApp/Telegram</button>
+        <button class="btn btn-primary" id="customBotBtn">🤖 SUBMIT BOT IDEA → Telegram</button>
         <p style="margin-top: 12px; font-size: 0.65rem; color:#5a6a82;">I'll review and contact you</p>
       </div>
       <div style="text-align: center; min-width: 150px;"><i class="fas fa-robot" style="font-size: 80px; color: #0064ff; opacity: 0.7;"></i><p style="margin-top: 12px; font-size: 0.7rem; color:#5a6a82;">Custom Bots</p></div>
@@ -665,21 +690,22 @@
     <iframe src="https://www.youtube.com/embed/a_Gj8v95OWQ?si=amG6p8B6KxAidjnC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
-  <!-- FOREX BOT SECTION + NEW KAIRON EA COLLECTION -->
+  <!-- FOREX BOT SECTION + KAIRON EA COLLECTION (updated prices) -->
   <div id="forex-bot" class="forex-area">
     <div style="font-size: 0.7rem; color: #ff6666; letter-spacing: 1px;">✦ PROPRIETARY SYSTEM</div>
     <h2 style="font-size: 1.8rem; font-weight: 600; margin: 16px 0;">Forex Bot — Fully Automated</h2>
     <p style="max-width: 500px; margin: 0 auto; color: #cbd5e1; font-size: 0.9rem;">MT4/MT5 compatible. Risk management, live monitoring, lifetime updates.</p>
-    <div class="price-tag">$85 USD (Offer🥳)</div>
-    <a href="https://wa.me/254799045699?text=Hello%20Calekyz%2C%20I%20want%20to%20buy%20the%20Forex%20Bot" target="_blank" class="btn btn-whatsapp">📲 CONTACT ON WHATSAPP</a>
+    <!-- Price changed to $115 -->
+    <div class="price-tag">$115 USD (Offer🥳)</div>
+    <a href="https://t.me/mentor_calekyz" target="_blank" class="btn btn-telegram">📲 CONTACT ON TELEGRAM</a>
     
     <div class="payment-details-area">
       <h4><i class="fas fa-credit-card"></i> PAYMENT DETAILS</h4>
       <div class="payment-icons"><span><i class="fas fa-mobile-alt"></i> M-Pesa: +254 799 045 699</span><span><i class="fab fa-bitcoin"></i> USDT (TRC20): TXm8x...9GkL</span><span><i class="fas fa-university"></i> Bank: Equity (upon request)</span></div>
-      <p style="font-size: 0.65rem; color:#5a6a82; margin-top: 16px;">*Payment confirmation via WhatsApp after transfer*</p>
+      <p style="font-size: 0.65rem; color:#5a6a82; margin-top: 16px;">*Payment confirmation via Telegram after transfer*</p>
     </div>
 
-    <!-- NEW KAIRON EA COLLECTION SECTION -->
+    <!-- NEW KAIRON EA COLLECTION SECTION (updated prices) -->
     <div class="kairon-ea-card" style="margin-top: 30px; text-align: left;">
       <div style="text-align: center;">
         <div style="font-size: 2rem;">🚀 KAIRON EA COLLECTION 🚀</div>
@@ -689,18 +715,18 @@
         <div style="flex:1; min-width: 220px; background: rgba(0,100,255,0.1); border-radius: 20px; padding: 20px; text-align: center;">
           <i class="fas fa-bolt" style="font-size: 2rem; color: #0064ff;"></i>
           <h4 style="margin: 12px 0;">Kairon Scalper EA</h4>
-          <div style="font-size: 1.5rem; font-weight: bold; color: #ffd700;">$85</div>
+          <div style="font-size: 1.5rem; font-weight: bold; color: #ffd700;">$115</div>
           <p style="font-size: 0.8rem;">Fast market execution designed to capture short-term opportunities.</p>
         </div>
         <div style="flex:1; min-width: 220px; background: rgba(255,51,51,0.1); border-radius: 20px; padding: 20px; text-align: center;">
           <i class="fas fa-chart-line" style="font-size: 2rem; color: #ff3333;"></i>
           <h4 style="margin: 12px 0;">Kairon Swing Master EA</h4>
-          <div style="font-size: 1.5rem; font-weight: bold; color: #ffd700;">$85</div>
+          <div style="font-size: 1.5rem; font-weight: bold; color: #ffd700;">$115</div>
           <p style="font-size: 0.8rem;">Built for traders who prefer holding positions for larger market moves.</p>
         </div>
       </div>
       <div style="text-align: center; margin-bottom: 32px;">
-        <div style="font-size: 1.3rem; font-weight: bold;">💎 Bundle Offer: Get both EAs for only <span style="color: #ffd700;">$170</span></div>
+        <div style="font-size: 1.3rem; font-weight: bold;">💎 Bundle Offer: Get both EAs for only <span style="color: #ffd700;">$200</span></div>
       </div>
       <div style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 20px; margin-bottom: 28px;">
         <h4 style="font-size: 1.2rem; margin-bottom: 16px;">✔️ Why Use a Trading EA?</h4>
@@ -714,31 +740,43 @@
         <h4>🔧 Integration & Activation</h4>
         <p>To activate your EA or get assistance with setup:</p>
         <div style="display: flex; justify-content: center; gap: 24px; margin-top: 12px; flex-wrap: wrap;">
-          <a href="https://t.me/Mentor_calekyz" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: #0088cc; padding: 8px 20px; border-radius: 40px; color: white; text-decoration: none;"><i class="fab fa-telegram-plane"></i> Telegram: @Mentor_calekyz</a>
-          <a href="https://wa.me/254799045699" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: #25D366; padding: 8px 20px; border-radius: 40px; color: white; text-decoration: none;"><i class="fab fa-whatsapp"></i> WhatsApp: +254 799 045699</a>
+          <a href="https://t.me/mentor_calekyz" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: #0088cc; padding: 8px 20px; border-radius: 40px; color: white; text-decoration: none;"><i class="fab fa-telegram-plane"></i> Telegram: @mentor_calekyz</a>
+          <!-- Removed WhatsApp -->
         </div>
         <p style="margin-top: 20px; font-style: italic;">Let Technology Work While You Focus On Growth</p>
         <div style="font-weight: bold; margin-top: 12px;">KAIRON SCALPER EA ⚡ | KAIRON SWING MASTER EA 📈<br>Trade Smarter. Trade Faster. Trade With Kairon.</div>
       </div>
     </div>
 
-    <!-- FREE BOT APPLICATION SECTION (existing) -->
+    <!-- FREE BOT APPLICATION SECTION (affiliate link updated to HFM) -->
     <div style="margin-top: 40px; padding: 32px; background: linear-gradient(135deg, rgba(0,100,255,0.1), rgba(255,51,51,0.05)); border-radius: 28px; border: 2px solid rgba(255,51,51,0.4);">
-      <div style="text-align: center; margin-bottom: 28px;"><div style="font-size: 0.8rem; color: #ff3333; letter-spacing: 2px; margin-bottom: 8px;">⭐ STEP 1 ⭐</div><h3 style="font-size: 1.3rem; margin-bottom: 12px;">GET THE FOREX EA</h3><p style="color: #cbd5e1; font-size: 0.85rem; margin-bottom: 16px;">Click below to register (it's free). You must complete this step before applying for the bot.</p><a href="https://www.puprime.partners/forex-trading-account/?affid=7389780" target="_blank" id="affiliateLinkBtn" class="btn btn-gold" style="background: linear-gradient(135deg, #ff3333, #cc0000); font-size: 1rem; padding: 14px 32px;">🌐 CREATE FOREX ACCOUNT NOW →</a><p style="font-size: 0.7rem; color: #5a6a82; margin-top: 10px;">Opens in new tab • Takes 2-3 minutes</p></div>
+      <div style="text-align: center; margin-bottom: 28px;">
+        <div style="font-size: 0.8rem; color: #ff3333; letter-spacing: 2px; margin-bottom: 8px;">⭐ STEP 1 ⭐</div>
+        <h3 style="font-size: 1.3rem; margin-bottom: 12px;">GET THE FOREX EA</h3>
+        <p style="color: #cbd5e1; font-size: 0.85rem; margin-bottom: 16px;">Click below to register (it's free). You must complete this step before applying for the bot.</p>
+        <!-- Updated affiliate link to HFM -->
+        <a href="https://www.hfm.com/ke/en/?refid=30490981" target="_blank" id="affiliateLinkBtn" class="btn btn-gold" style="background: linear-gradient(135deg, #ff3333, #cc0000); font-size: 1rem; padding: 14px 32px;">🌐 CREATE FOREX ACCOUNT NOW →</a>
+        <p style="font-size: 0.7rem; color: #5a6a82; margin-top: 10px;">Opens in new tab • Takes 2-3 minutes</p>
+      </div>
       <div style="text-align: center; margin: 20px 0;"><span style="background: rgba(0,100,255,0.3); padding: 6px 16px; border-radius: 40px; font-size: 0.7rem;">⬇ THEN STEP 2 ⬇</span></div>
-      <div><div style="text-align: center; margin-bottom: 20px;"><div style="font-size: 0.8rem; color: #60a5fa; letter-spacing: 2px;">🎯 STEP 2</div><h3 style="font-size: 1.3rem;">Apply for Your Bot</h3><p style="color: #cbd5e1; font-size: 0.8rem;">After creating your account, fill out the form below</p></div>
+      <div>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <div style="font-size: 0.8rem; color: #60a5fa; letter-spacing: 2px;">🎯 STEP 2</div>
+          <h3 style="font-size: 1.3rem;">Apply for Your Bot</h3>
+          <p style="color: #cbd5e1; font-size: 0.8rem;">After creating your account, fill out the form below</p>
+        </div>
         <form id="freeBotApplicationForm">
           <div style="display: flex; flex-direction: column; gap: 16px;">
             <div><label style="font-size: 0.8rem; color: #a5b4fc; display: block; margin-bottom: 6px;">Full Name *</label><input type="text" id="freeBotName" required placeholder="John Doe" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.4); border: 1px solid rgba(0,100,255,0.3); border-radius: 12px; color: white; font-family: inherit;"></div>
             <div><label style="font-size: 0.8rem; color: #a5b4fc; display: block; margin-bottom: 6px;">Email Address *</label><input type="email" id="freeBotEmail" required placeholder="you@example.com" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.4); border: 1px solid rgba(0,100,255,0.3); border-radius: 12px; color: white; font-family: inherit;"></div>
             <div><label style="font-size: 0.8rem; color: #a5b4fc; display: block; margin-bottom: 6px;">MT5 Login ID (ONLY - No Password) *</label><input type="text" id="freeBotMt5Id" required placeholder="e.g., 12345678" style="width: 100%; padding: 12px; background: rgba(0,0,0,0.4); border: 1px solid rgba(0,100,255,0.3); border-radius: 12px; color: white; font-family: inherit;"><p style="font-size: 0.6rem; color: #ffaa00; margin-top: 4px;">⚠️ Only provide your login ID. NEVER share your password.</p></div>
             <div><label style="display: flex; align-items: center; gap: 10px; cursor: pointer;"><input type="checkbox" id="freeBotConfirm" required style="width: 18px; height: 18px;"><span style="font-size: 0.8rem; color: #cbd5e1;">✅ I have created my forex account using the affiliate link above</span></label></div>
-            <!-- Contact choice: WhatsApp or Telegram -->
-            <div class="contact-choice"><label><input type="radio" name="freeBotContactMethod" value="whatsapp" checked> <i class="fab fa-whatsapp"></i> WhatsApp</label><label><input type="radio" name="freeBotContactMethod" value="telegram"> <i class="fab fa-telegram-plane"></i> Telegram (@Mentor_calekyz)</label></div>
+            <!-- Only Telegram contact option -->
+            <div class="contact-choice"><label><input type="radio" name="freeBotContactMethod" value="telegram" checked> <i class="fab fa-telegram-plane"></i> Telegram (@mentor_calekyz)</label></div>
           </div>
-          <button type="submit" id="sendWhatsAppApplicationBtn" class="btn btn-whatsapp" style="width: 100%; margin-top: 24px; justify-content: center; padding: 14px; font-size: 1rem;">📤 SEND APPLICATION</button>
+          <button type="submit" id="sendWhatsAppApplicationBtn" class="btn btn-telegram" style="width: 100%; margin-top: 24px; justify-content: center; padding: 14px; font-size: 1rem;">📤 SEND APPLICATION</button>
         </form>
-        <p style="text-align: center; font-size: 0.7rem; color: #5a6a82; margin-top: 16px;">⏱️ After sending, I will integrate the bot to your MT5 account within 12 hours.<br>I will contact you via your chosen method.</p>
+        <p style="text-align: center; font-size: 0.7rem; color: #5a6a82; margin-top: 16px;">⏱️ After sending, I will integrate the bot to your MT5 account within 12 hours.<br>I will contact you via Telegram.</p>
       </div>
     </div>
   </div>
@@ -748,169 +786,159 @@
     <div class="section-badge">🎓 LIVE TRADING EDUCATION</div>
     <h2 style="font-size: 1.9rem; font-weight: 700; margin-bottom: 16px;">Learn from <span style="background: linear-gradient(135deg, #0064ff, #ff3333); -webkit-background-clip: text; background-clip: text; color: transparent;">Caleb Orenge</span></h2>
     <p style="color: #cbd5e1; max-width: 600px; margin: 0 auto;">Daily live classes • Real market analysis • Q&A included</p>
-    <div class="class-card"><div class="class-icon">📊🎓</div><div class="class-title">Forex & Deriv Live Classes</div><div class="class-schedule"><i class="far fa-clock"></i> 9:00 PM – 11:00 PM (Daily)</div><div class="class-teacher">👨‍🏫 Teacher: Caleb Orenge (Calekyztrading)</div><div class="prices-container"><div class="price-item"><div class="price-label">🔥 BUNDLE (Both)</div><div class="price-amount">$60 <span style="font-size: 1rem;">USD</span></div><div class="price-kenya">🇰🇪 8,000 KSH</div><div style="font-size: 0.7rem; color: #60a5fa; margin-top: 6px;">Forex + Deriv Full Access</div></div><div class="price-item"><div class="price-label">📈 DERIV Only</div><div class="price-amount">$30 <span style="font-size: 1rem;">USD</span></div><div class="price-kenya">🇰🇪 4,000 KSH</div><div style="font-size: 0.7rem; color: #60a5fa; margin-top: 6px;">Binary & Price Action Focus</div></div></div><div class="payment-methods"><span><i class="fas fa-mobile-alt"></i> M-Pesa</span><span><i class="fab fa-bitcoin"></i> Crypto (BTC/USDT)</span></div><button class="btn btn-gold btn-class" id="openClassModalBtn">📚 Enroll Now — Choose Package</button><p style="font-size: 0.65rem; color: #5a6a82; margin-top: 16px;">*Classes run daily • Recordings available • WhatsApp support included</p></div>
+    <div class="class-card"><div class="class-icon">📊🎓</div><div class="class-title">Forex & Deriv Live Classes</div><div class="class-schedule"><i class="far fa-clock"></i> 9:00 PM – 11:00 PM (Daily)</div><div class="class-teacher">👨‍🏫 Teacher: Caleb Orenge (Calekyztrading)</div><div class="prices-container"><div class="price-item"><div class="price-label">🔥 BUNDLE (Both)</div><div class="price-amount">$60 <span style="font-size: 1rem;">USD</span></div><div class="price-kenya">🇰🇪 8,000 KSH</div><div style="font-size: 0.7rem; color: #60a5fa; margin-top: 6px;">Forex + Deriv Full Access</div></div><div class="price-item"><div class="price-label">📈 DERIV Only</div><div class="price-amount">$30 <span style="font-size: 1rem;">USD</span></div><div class="price-kenya">🇰🇪 4,000 KSH</div><div style="font-size: 0.7rem; color: #60a5fa; margin-top: 6px;">Binary & Price Action Focus</div></div></div><div class="payment-methods"><span><i class="fas fa-mobile-alt"></i> M-Pesa</span><span><i class="fab fa-bitcoin"></i> Crypto (BTC/USDT)</span></div><button class="btn btn-gold btn-class" id="openClassModalBtn">📚 Enroll Now — Choose Package</button><p style="font-size: 0.65rem; color: #5a6a82; margin-top: 16px;">*Classes run daily • Recordings available • Telegram support included</p></div>
   </div>
 
-  <!-- TRUST BADGES -->
+  <!-- TRUST BADGES (updated PU Prime to HFM) -->
   <div class="trust-badge">
     <div class="trust-item"><div class="trust-icon">🔒</div><h3>Transparent Execution</h3><p>Real quotes, no hidden spreads</p></div>
     <div class="trust-item"><div class="trust-icon">⚡</div><h3>24/7 Automation</h3><p>Dedicated infrastructure</p></div>
     <div class="trust-item"><div class="trust-icon">📊</div><h3>Proven Track Record</h3><p>1000+ active traders</p></div>
-    <div class="trust-item"><div class="trust-icon">🛡️</div><h3>Tier-1 Brokers</h3><p>Deriv • PU Prime</p></div>
+    <div class="trust-item"><div class="trust-icon">🛡️</div><h3>Tier-1 Brokers</h3><p>Deriv • HFM • Just Markets</p></div>
   </div>
 
-  <!-- BOTTOM CTA -->
-  <div style="text-align: center; margin: 40px 0 20px;"><p style="margin-bottom: 24px; font-size: 1rem; font-weight: 500;">Ready to scale your trading?</p><div class="button-group" style="justify-content: center;"><a href="https://track.deriv.com/_zuT8t8IlEmj1hit6RV3zsGNd7ZgqdRLk/1/" target="_blank" class="btn btn-primary">DERIV ACCOUNT</a><a href="https://www.puprime.partners/forex-trading-account/?affid=7389780" target="_blank" class="btn btn-secondary">FOREX ACCOUNT</a><a href="https://wa.me/254799045699?text=Hello%20Calekyz%2C%20I%20have%20a%20question%20about%20your%20services" target="_blank" class="btn btn-whatsapp">WHATSAPP SUPPORT</a></div></div>
+  <!-- BOTTOM CTA (updated links) -->
+  <div style="text-align: center; margin: 40px 0 20px;">
+    <p style="margin-bottom: 24px; font-size: 1rem; font-weight: 500;">Ready to scale your trading?</p>
+    <div class="button-group" style="justify-content: center;">
+      <a href="https://track.deriv.com/_zuT8t8IlEmj1hit6RV3zsGNd7ZgqdRLk/1/" target="_blank" class="btn btn-primary">DERIV ACCOUNT</a>
+      <a href="https://www.hfm.com/ke/en/?refid=30490981" target="_blank" class="btn btn-secondary">FOREX ACCOUNT</a>
+      <a href="https://t.me/mentor_calekyz" target="_blank" class="btn btn-telegram">TELEGRAM SUPPORT</a>
+    </div>
+  </div>
 
-  <footer><p>© 2025 Calekyz FX — Institutional Trading Infrastructure.<br><strong>Risk warning:</strong> Trading forex, CFDs, and binary options involves substantial risk of loss. Past performance does not guarantee future results. Account management services do not eliminate market risk. Only trade with money you can afford to lose.<br>📞 WhatsApp Support: <a href="https://wa.me/254799045699" style="color:#25D366; text-decoration:none;">+254 799 045 699</a> | Telegram: <a href="https://t.me/Mentor_calekyz" style="color:#0088cc; text-decoration:none;">@Mentor_calekyz</a></p></footer>
+  <footer>
+    <p>© 2025 Calekyz FX — Institutional Trading Infrastructure.<br>
+    <strong>Risk warning:</strong> Trading forex, CFDs, and binary options involves substantial risk of loss. Past performance does not guarantee future results. Account management services do not eliminate market risk. Only trade with money you can afford to lose.<br>
+    📞 Telegram Support: <a href="https://t.me/mentor_calekyz" style="color:#0088cc; text-decoration:none;">@mentor_calekyz</a></p>
+  </footer>
 </div>
 </div>
 
-<!-- AFFILIATE POPUP (unchanged) -->
-<div id="affiliatePopup" class="affiliate-popup-overlay"><div class="affiliate-popup"><h3>🔥 Featured Affiliate Offers</h3><div class="popup-sub">Create an account & start trading with top brokers</div><div class="affiliate-links"><a href="https://track.deriv.com/_zuT8t8IlEmj1hit6RV3zsGNd7ZgqdRLk/1/" target="_blank" class="affiliate-card"><div class="affiliate-icon"><i class="fas fa-chart-simple"></i></div><div class="affiliate-info"><strong>Deriv</strong><small>Binary & CFDs • Award-winning platform</small></div><i class="fas fa-arrow-right"></i></a><a href="https://www.puprime.partners/forex-trading-account/?affid=7389780" target="_blank" class="affiliate-card"><div class="affiliate-icon"><i class="fas fa-building-columns"></i></div><div class="affiliate-info"><strong>PU Prime</strong><small>Create Forex Account • Low spreads • Fast execution</small></div><i class="fas fa-arrow-right"></i></a><a href="https://one.justmarkets.link/a/f2yyz0kwcm" target="_blank" class="affiliate-card"><div class="affiliate-icon"><i class="fas fa-chart-line"></i></div><div class="affiliate-info"><strong>Just Markets</strong><small>Quality • Professionalism • Reliability</small></div><i class="fas fa-arrow-right"></i></a></div><button class="close-popup-btn" id="closePopupBtn">CLOSE</button></div></div>
+<!-- AFFILIATE POPUP (updated links and text) -->
+<div id="affiliatePopup" class="affiliate-popup-overlay">
+  <div class="affiliate-popup">
+    <h3>🔥 Featured Affiliate Offers</h3>
+    <div class="popup-sub">Create an account & start trading with top brokers</div>
+    <div class="affiliate-links">
+      <a href="https://track.deriv.com/_zuT8t8IlEmj1hit6RV3zsGNd7ZgqdRLk/1/" target="_blank" class="affiliate-card">
+        <div class="affiliate-icon"><i class="fas fa-chart-simple"></i></div>
+        <div class="affiliate-info"><strong>Deriv</strong><small>Binary & CFDs • Award-winning platform</small></div>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+      <!-- PU Prime replaced with HFM -->
+      <a href="https://www.hfm.com/ke/en/?refid=30490981" target="_blank" class="affiliate-card">
+        <div class="affiliate-icon"><i class="fas fa-building-columns"></i></div>
+        <div class="affiliate-info"><strong>HFM</strong><small>Create Forex Account • Low spreads • Fast execution</small></div>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="https://one.justmarkets.link/a/f2yyz0kwcm" target="_blank" class="affiliate-card">
+        <div class="affiliate-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="affiliate-info"><strong>Just Markets</strong><small>Quality • Professionalism • Reliability</small></div>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+    <button class="close-popup-btn" id="closePopupBtn">CLOSE</button>
+  </div>
+</div>
 
-<!-- EXPERT TRADER KAIRON ANALYSIS POPUP (with contact choice) -->
-<div id="kaironPopup" class="kairon-popup-overlay"><div class="kairon-popup"><h3>🤖 Expert Trader Kairon Analysis</h3><div class="price-badge">💰 $65 USD (8,500 KSH)</div><p style="color: #cbd5e1; margin-bottom: 20px;">Advanced market prediction + Bot integration to your third party</p><form id="kaironPurchaseForm"><div class="form-group"><label>📧 Email Address *</label><input type="email" id="kaironEmail" required placeholder="your@email.com"></div><div class="form-group"><label>🔐 Desired Password *</label><input type="password" id="kaironPassword" required placeholder="Choose a password"></div><div class="form-group"><label>💳 Payment Method *</label><select id="kaironPaymentMethod" required><option value="">-- Select --</option><option value="M-Pesa">🇰🇪 M-Pesa (Kenya)</option><option value="Crypto">₿ Crypto (USDT/BTC)</option></select></div><div id="mpesaInstructions" class="payment-instructions"><strong>📱 M-Pesa Instructions:</strong><br>Send KES 8,500 to <strong>+254 799 045 699</strong> (Calekyz FX)<br>Account Name: Caleb Orenge</div><div id="cryptoInstructions" class="payment-instructions"><strong>₿ Crypto Instructions:</strong><br>Send $65 USDT (TRC20) to: <strong>TXm8x4Z7n9Qw3EfR6tY2uIpA1sD5fG8hJ9kL</strong><br>Also accepts BTC on request.</div><div class="form-group"><label>📎 Attach Proof (M-Pesa message or Crypto TX hash)</label><textarea id="kaironProof" rows="3" placeholder="Paste your M-Pesa message details or crypto transaction hash here..." required></textarea></div><div class="contact-choice"><label><input type="radio" name="kaironContactMethod" value="whatsapp" checked> <i class="fab fa-whatsapp"></i> WhatsApp</label><label><input type="radio" name="kaironContactMethod" value="telegram"> <i class="fab fa-telegram-plane"></i> Telegram (@Mentor_calekyz)</label></div><button type="submit" class="btn btn-whatsapp btn-buy">📤 SEND TO CONTACT → Complete Purchase</button></form><button class="close-kairon-btn" id="closeKaironBtn">Cancel</button></div></div>
+<!-- EXPERT TRADER KAIRON ANALYSIS POPUP (contact only Telegram) -->
+<div id="kaironPopup" class="kairon-popup-overlay">
+  <div class="kairon-popup">
+    <h3>🤖 Expert Trader Kairon Analysis</h3>
+    <div class="price-badge">💰 $65 USD (8,500 KSH)</div>
+    <p style="color: #cbd5e1; margin-bottom: 20px;">Advanced market prediction + Bot integration to your third party</p>
+    <form id="kaironPurchaseForm">
+      <div class="form-group"><label>📧 Email Address *</label><input type="email" id="kaironEmail" required placeholder="your@email.com"></div>
+      <div class="form-group"><label>🔐 Desired Password *</label><input type="password" id="kaironPassword" required placeholder="Choose a password"></div>
+      <div class="form-group"><label>💳 Payment Method *</label><select id="kaironPaymentMethod" required><option value="">-- Select --</option><option value="M-Pesa">🇰🇪 M-Pesa (Kenya)</option><option value="Crypto">₿ Crypto (USDT/BTC)</option></select></div>
+      <div id="mpesaInstructions" class="payment-instructions"><strong>📱 M-Pesa Instructions:</strong><br>Send KES 8,500 to <strong>+254 799 045 699</strong> (Calekyz FX)<br>Account Name: Caleb Orenge</div>
+      <div id="cryptoInstructions" class="payment-instructions"><strong>₿ Crypto Instructions:</strong><br>Send $65 USDT (TRC20) to: <strong>TXm8x4Z7n9Qw3EfR6tY2uIpA1sD5fG8hJ9kL</strong><br>Also accepts BTC on request.</div>
+      <div class="form-group"><label>📎 Attach Proof (M-Pesa message or Crypto TX hash)</label><textarea id="kaironProof" rows="3" placeholder="Paste your M-Pesa message details or crypto transaction hash here..." required></textarea></div>
+      <!-- Only Telegram contact -->
+      <div class="contact-choice"><label><input type="radio" name="kaironContactMethod" value="telegram" checked> <i class="fab fa-telegram-plane"></i> Telegram (@mentor_calekyz)</label></div>
+      <button type="submit" class="btn btn-telegram btn-buy">📤 SEND TO TELEGRAM → Complete Purchase</button>
+    </form>
+    <button class="close-kairon-btn" id="closeKaironBtn">Cancel</button>
+  </div>
+</div>
 
-<!-- MODALS with contact choice -->
-<div id="copyTradingModal" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeCopyModal()">&times;</span><h3>📋 Request Account Management</h3><p style="font-size: 0.8rem; margin-bottom: 16px;">Fill in your details and I'll respond via your chosen method.</p><form id="copyTradingForm"><label>Full Name *</label><input type="text" id="copyName" required><label>Phone Number (WhatsApp) *</label><input type="tel" id="copyPhone" required><label>Trading Platform</label><select id="copyPlatform"><option>MT4</option><option>MT5</option><option>Deriv</option><option>cTrader</option><option>Other</option></select><label>Initial Deposit Amount (USD)</label><input type="number" id="copyDeposit" placeholder="e.g., 500"><label>Additional Message (Optional)</label><textarea id="copyMessage" rows="3"></textarea><div class="contact-choice"><label><input type="radio" name="copyContactMethod" value="whatsapp" checked> <i class="fab fa-whatsapp"></i> WhatsApp</label><label><input type="radio" name="copyContactMethod" value="telegram"> <i class="fab fa-telegram-plane"></i> Telegram (@Mentor_calekyz)</label></div><button type="submit" class="btn btn-gold" style="width:100%; margin-top:12px;">SEND REQUEST →</button></form><p class="risk-warning" style="margin-top: 16px;">⚠️ By submitting, you confirm you understand the risks of forex trading.</p></div></div>
+<!-- MODALS (contact only Telegram) -->
+<div id="copyTradingModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeCopyModal()">&times;</span>
+    <h3>📋 Request Account Management</h3>
+    <p style="font-size: 0.8rem; margin-bottom: 16px;">Fill in your details and I'll respond via Telegram.</p>
+    <form id="copyTradingForm">
+      <label>Full Name *</label><input type="text" id="copyName" required>
+      <label>Phone Number (for Telegram) *</label><input type="tel" id="copyPhone" required>
+      <label>Trading Platform</label><select id="copyPlatform"><option>MT4</option><option>MT5</option><option>Deriv</option><option>cTrader</option><option>Other</option></select>
+      <label>Initial Deposit Amount (USD)</label><input type="number" id="copyDeposit" placeholder="e.g., 500">
+      <label>Additional Message (Optional)</label><textarea id="copyMessage" rows="3"></textarea>
+      <div class="contact-choice"><label><input type="radio" name="copyContactMethod" value="telegram" checked> <i class="fab fa-telegram-plane"></i> Telegram (@mentor_calekyz)</label></div>
+      <button type="submit" class="btn btn-gold" style="width:100%; margin-top:12px;">SEND REQUEST →</button>
+    </form>
+    <p class="risk-warning" style="margin-top: 16px;">⚠️ By submitting, you confirm you understand the risks of forex trading.</p>
+  </div>
+</div>
 
-<div id="customBotModal" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeBotModal()">&times;</span><h3>🤖 Request Custom Trading Bot</h3><p style="font-size: 0.8rem; margin-bottom: 16px;">Describe your bot idea.</p><form id="customBotForm"><label>Your Name *</label><input type="text" id="botName" required><label>Your Email *</label><input type="email" id="botEmail" required><label>Bot Description *</label><textarea id="botDescription" rows="4" required></textarea><label>Budget (Optional)</label><input type="text" id="botBudget"><div class="contact-choice"><label><input type="radio" name="botContactMethod" value="whatsapp" checked> <i class="fab fa-whatsapp"></i> WhatsApp</label><label><input type="radio" name="botContactMethod" value="telegram"> <i class="fab fa-telegram-plane"></i> Telegram (@Mentor_calekyz)</label></div><button type="submit" class="btn btn-primary" style="width:100%; margin-top:12px;">SUBMIT IDEA →</button></form></div></div>
+<div id="customBotModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeBotModal()">&times;</span>
+    <h3>🤖 Request Custom Trading Bot</h3>
+    <p style="font-size: 0.8rem; margin-bottom: 16px;">Describe your bot idea.</p>
+    <form id="customBotForm">
+      <label>Your Name *</label><input type="text" id="botName" required>
+      <label>Your Email *</label><input type="email" id="botEmail" required>
+      <label>Bot Description *</label><textarea id="botDescription" rows="4" required></textarea>
+      <label>Budget (Optional)</label><input type="text" id="botBudget">
+      <div class="contact-choice"><label><input type="radio" name="botContactMethod" value="telegram" checked> <i class="fab fa-telegram-plane"></i> Telegram (@mentor_calekyz)</label></div>
+      <button type="submit" class="btn btn-primary" style="width:100%; margin-top:12px;">SUBMIT IDEA →</button>
+    </form>
+  </div>
+</div>
 
-<div id="classModal" class="modal"><div class="modal-content"><span class="modal-close" onclick="closeClassModal()">&times;</span><h3>📚 Enroll in Live Classes</h3><form id="classEnrollmentForm"><label>Select Package *</label><select id="classPackage" required><option value="Forex + Deriv Bundle - $60 USD (8,000 KSH)">🔥 BUNDLE: Forex + Deriv — $60 (8,000 KSH)</option><option value="Deriv Only - $30 USD (4,000 KSH)">📈 DERIV Only — $30 (4,000 KSH)</option></select><label>Full Name *</label><input type="text" id="className" required><label>Phone Number (WhatsApp) *</label><input type="tel" id="classPhone" required><label>Payment Method</label><select id="classPaymentMethod"><option value="M-Pesa">🇰🇪 M-Pesa</option><option value="Crypto">₿ Crypto (BTC / USDT)</option></select><label>Transaction Reference (Optional)</label><input type="text" id="classTxRef"><div class="contact-choice"><label><input type="radio" name="classContactMethod" value="whatsapp" checked> <i class="fab fa-whatsapp"></i> WhatsApp</label><label><input type="radio" name="classContactMethod" value="telegram"> <i class="fab fa-telegram-plane"></i> Telegram (@Mentor_calekyz)</label></div><button type="submit" class="btn btn-gold" style="width:100%;">✅ SEND ENROLLMENT REQUEST</button></form></div></div>
+<div id="classModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeClassModal()">&times;</span>
+    <h3>📚 Enroll in Live Classes</h3>
+    <form id="classEnrollmentForm">
+      <label>Select Package *</label><select id="classPackage" required><option value="Forex + Deriv Bundle - $60 USD (8,000 KSH)">🔥 BUNDLE: Forex + Deriv — $60 (8,000 KSH)</option><option value="Deriv Only - $30 USD (4,000 KSH)">📈 DERIV Only — $30 (4,000 KSH)</option></select>
+      <label>Full Name *</label><input type="text" id="className" required>
+      <label>Phone Number (for Telegram) *</label><input type="tel" id="classPhone" required>
+      <label>Payment Method</label><select id="classPaymentMethod"><option value="M-Pesa">🇰🇪 M-Pesa</option><option value="Crypto">₿ Crypto (BTC / USDT)</option></select>
+      <label>Transaction Reference (Optional)</label><input type="text" id="classTxRef">
+      <div class="contact-choice"><label><input type="radio" name="classContactMethod" value="telegram" checked> <i class="fab fa-telegram-plane"></i> Telegram (@mentor_calekyz)</label></div>
+      <button type="submit" class="btn btn-gold" style="width:100%;">✅ SEND ENROLLMENT REQUEST</button>
+    </form>
+  </div>
+</div>
 
-<!-- FLOATING SOCIAL BUTTON (unchanged) -->
-<div id="floatingSocial" class="floating-social-container"><div class="social-float-btn" id="socialFloatBtn"><i class="fas fa-share-alt"></i></div><div class="social-float-menu" id="socialFloatMenu"><a href="https://t.me/calekyz254" target="_blank" class="social-float-item"><i class="fab fa-telegram-plane"></i> Telegram</a><a href="https://tiktok.com/@calekyz.com" target="_blank" class="social-float-item"><i class="fab fa-tiktok"></i> TikTok</a><a href="https://youtube.com/@calekyztradingsite" target="_blank" class="social-float-item"><i class="fab fa-youtube"></i> YouTube</a><a href="https://whatsapp.com/channel/0029Vb6NOev89inkCXWzsp3D" target="_blank" class="social-float-item"><i class="fab fa-whatsapp"></i> WhatsApp Channel</a><a href="https://chat.whatsapp.com/DNyAahz0r2UCkEBm6Otsm2" target="_blank" class="social-float-item"><i class="fab fa-whatsapp"></i> WhatsApp Group</a><a href="https://wa.me/254799045699" target="_blank" class="social-float-item"><i class="fab fa-whatsapp"></i> WhatsApp Support</a></div></div>
+<!-- FLOATING SOCIAL BUTTON (removed WhatsApp items) -->
+<div id="floatingSocial" class="floating-social-container">
+  <div class="social-float-btn" id="socialFloatBtn"><i class="fas fa-share-alt"></i></div>
+  <div class="social-float-menu" id="socialFloatMenu">
+    <a href="https://t.me/calekyz254" target="_blank" class="social-float-item"><i class="fab fa-telegram-plane"></i> Telegram</a>
+    <a href="https://tiktok.com/@calekyz.com" target="_blank" class="social-float-item"><i class="fab fa-tiktok"></i> TikTok</a>
+    <a href="https://youtube.com/@calekyztradingsite" target="_blank" class="social-float-item"><i class="fab fa-youtube"></i> YouTube</a>
+    <!-- removed WhatsApp channel/group/support -->
+  </div>
+</div>
 
-<!-- SMART CHAT BUTTON -->
-<div class="smart-chat-container"><div class="smart-chat-btn" id="smartChatBtn"><i class="fas fa-comment-dots"></i></div><div class="chat-menu" id="chatMenu"><div class="chat-option ai-option" id="aiChatOption"><i class="fas fa-robot"></i><span>🤖 AI Assistant</span></div><a href="https://wa.me/254799045699?text=Hello%20Calekyz%2C%20I%20need%20help" target="_blank" class="chat-option whatsapp-option"><i class="fab fa-whatsapp"></i><span>📱 WhatsApp Support</span></a></div></div>
+<!-- SMART CHAT BUTTON (only AI + Telegram) -->
+<div class="smart-chat-container">
+  <div class="smart-chat-btn" id="smartChatBtn"><i class="fas fa-comment-dots"></i></div>
+  <div class="chat-menu" id="chatMenu">
+    <div class="chat-option ai-option" id="aiChatOption"><i class="fas fa-robot"></i><span>🤖 AI Assistant</span></div>
+    <a href="https://t.me/mentor_calekyz" target="_blank" class="chat-option telegram-option"><i class="fab fa-telegram-plane"></i><span>📱 Telegram Support</span></a>
+  </div>
+</div>
 
 <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()">↑</button>
 
+<!-- ========== SCRIPTS ========== -->
 <script>
-  // Dark/light mode, loaders, canvas, etc. (existing scripts preserved)
-  // Additional: Form submission handlers with contact method choice
-  // Helper to open WhatsApp or Telegram
-  function sendViaWhatsApp(number, message) { window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, '_blank'); }
-  function sendViaTelegram(username, message) { window.open(`https://t.me/${username}?text=${encodeURIComponent(message)}`, '_blank'); }
-
-  // Copy Trading Form
-  const copyForm = document.getElementById('copyTradingForm');
-  if (copyForm) {
-    copyForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('copyName')?.value || '';
-      const phone = document.getElementById('copyPhone')?.value || '';
-      const platform = document.getElementById('copyPlatform')?.value || '';
-      const deposit = document.getElementById('copyDeposit')?.value || '';
-      const msg = document.getElementById('copyMessage')?.value || '';
-      const contactMethod = document.querySelector('input[name="copyContactMethod"]:checked')?.value || 'whatsapp';
-      const fullMessage = `Copy Trading Request\nName: ${name}\nWhatsApp: ${phone}\nPlatform: ${platform}\nDeposit: ${deposit}\nMessage: ${msg}`;
-      if (contactMethod === 'whatsapp') sendViaWhatsApp('254799045699', fullMessage);
-      else sendViaTelegram('Mentor_calekyz', fullMessage);
-      closeCopyModal();
-    });
-  }
-  // Custom Bot Form
-  const botForm = document.getElementById('customBotForm');
-  if (botForm) {
-    botForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('botName')?.value || '';
-      const email = document.getElementById('botEmail')?.value || '';
-      const desc = document.getElementById('botDescription')?.value || '';
-      const budget = document.getElementById('botBudget')?.value || '';
-      const contactMethod = document.querySelector('input[name="botContactMethod"]:checked')?.value || 'whatsapp';
-      const fullMessage = `Custom Bot Request\nName: ${name}\nEmail: ${email}\nDescription: ${desc}\nBudget: ${budget}`;
-      if (contactMethod === 'whatsapp') sendViaWhatsApp('254799045699', fullMessage);
-      else sendViaTelegram('Mentor_calekyz', fullMessage);
-      closeBotModal();
-    });
-  }
-  // Class Enrollment Form
-  const classForm = document.getElementById('classEnrollmentForm');
-  if (classForm) {
-    classForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const pkg = document.getElementById('classPackage')?.value || '';
-      const name = document.getElementById('className')?.value || '';
-      const phone = document.getElementById('classPhone')?.value || '';
-      const payment = document.getElementById('classPaymentMethod')?.value || '';
-      const txRef = document.getElementById('classTxRef')?.value || '';
-      const contactMethod = document.querySelector('input[name="classContactMethod"]:checked')?.value || 'whatsapp';
-      const fullMessage = `Class Enrollment\nPackage: ${pkg}\nName: ${name}\nPhone: ${phone}\nPayment: ${payment}\nTxRef: ${txRef}`;
-      if (contactMethod === 'whatsapp') sendViaWhatsApp('254799045699', fullMessage);
-      else sendViaTelegram('Mentor_calekyz', fullMessage);
-      closeClassModal();
-    });
-  }
-  // Free Bot Application Form
-  const freeBotFormEl = document.getElementById('freeBotApplicationForm');
-  if (freeBotFormEl) {
-    freeBotFormEl.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('freeBotName')?.value || '';
-      const email = document.getElementById('freeBotEmail')?.value || '';
-      const mt5Id = document.getElementById('freeBotMt5Id')?.value || '';
-      const confirmed = document.getElementById('freeBotConfirm')?.checked;
-      const contactMethod = document.querySelector('input[name="freeBotContactMethod"]:checked')?.value || 'whatsapp';
-      if (!name || !email || !mt5Id) { alert('❌ Please fill in all fields.'); return; }
-      if (!confirmed) { alert('❌ Please confirm that you have created your forex account using the affiliate link above.'); return; }
-      const message = `*NEW FREE BOT APPLICATION*\nName: ${name}\nEmail: ${email}\nMT5 Login ID: ${mt5Id}\nConfirmed account created via affiliate link: Yes\nPlease integrate bot.`;
-      if (contactMethod === 'whatsapp') sendViaWhatsApp('254799045699', message);
-      else sendViaTelegram('Mentor_calekyz', message);
-      alert('✅ Application sent! I will contact you on your chosen platform within 12 hours.');
-      freeBotFormEl.reset();
-    });
-  }
-  // Kairon Purchase Form
-  const kaironFormEl = document.getElementById('kaironPurchaseForm');
-  if (kaironFormEl) {
-    kaironFormEl.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('kaironEmail')?.value || '';
-      const password = document.getElementById('kaironPassword')?.value || '';
-      const paymentMethod = document.getElementById('kaironPaymentMethod')?.value || '';
-      const proof = document.getElementById('kaironProof')?.value || '';
-      const contactMethod = document.querySelector('input[name="kaironContactMethod"]:checked')?.value || 'whatsapp';
-      if (!email || !password || !paymentMethod || !proof) { alert('❌ Please fill in all fields.'); return; }
-      const message = `*KAIRON SYSTEMS ANALYSIS PURCHASE*\nProduct: Advanced Market Prediction + Bot Integration\nPrice: $85 USD (10,500 KSH)\nEmail: ${email}\nDesired Password: ${password}\nPayment Method: ${paymentMethod}\nPayment Proof: ${proof}\nPlease send access credentials.`;
-      if (contactMethod === 'whatsapp') sendViaWhatsApp('254799045699', message);
-      else sendViaTelegram('Mentor_calekyz', message);
-      alert('✅ Request sent! I will respond shortly.');
-      kaironFormEl.reset();
-      document.getElementById('mpesaInstructions')?.classList.remove('show');
-      document.getElementById('cryptoInstructions')?.classList.remove('show');
-      document.getElementById('kaironPopup')?.classList.remove('show');
-    });
-  }
-</script>
-
-<!-- ========== WELCOME POPUP HTML + STYLES ========== -->
-<div id="welcomeBurnerPopup" class="welcome-popup-overlay">
-  <div class="welcome-popup">
-    <button class="welcome-popup-close" id="closeWelcomePopup">&times;</button>
-    <div class="welcome-popup-icon">🔥</div>
-    <h3>Special Offers Just For You!</h3>
-    <p class="welcome-subtitle">Click on any offer to jump directly to that section</p>
-    <div class="welcome-offers-grid">
-      <div class="welcome-offer-card" data-section="kairon"><div class="offer-icon">🚀</div><div class="offer-info"><div class="offer-title">Expert Trader Matches Tool Kairon</div><div class="offer-price">$70 USD</div><div class="offer-desc">Advanced Market Prediction + Bot Integration</div></div></div>
-      <div class="welcome-offer-card" data-section="forexbot"><div class="offer-icon">💱</div><div class="offer-info"><div class="offer-title">Forex Bot</div><div class="offer-price">$85 USD (Offer 🥳)</div><div class="offer-desc">Fully Automated MT4/MT5</div></div></div>
-      <div class="welcome-offer-card" data-section="classes"><div class="offer-icon">📚</div><div class="offer-info"><div class="offer-title">Live Trading Classes</div><div class="offer-price">From $30 USD</div><div class="offer-desc">Daily 9PM - 11PM with Caleb</div></div></div>
-      <div class="welcome-offer-card" data-section="deriv"><div class="offer-icon">⚡</div><div class="offer-info"><div class="offer-title">Deriv Third Party API</div><div class="offer-price">Institutional Grade</div><div class="offer-desc">Automated Binary Trading</div></div></div>
-      <div class="welcome-offer-card" data-section="affiliate"><div class="offer-icon">🔗</div><div class="offer-info"><div class="offer-title">Affiliate Portals</div><div class="offer-price">Deriv | PU Prime | Just Markets</div><div class="offer-desc">Create free accounts & start trading</div></div></div>
-    </div>
-    <button class="welcome-dismiss-btn" id="dismissWelcomePopup">Continue to Site →</button>
-    <p class="welcome-hint">⏱️ This popup won't show again for 24 hours</p>
-  </div>
-</div>
-<style>
-.welcome-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);backdrop-filter:blur(16px);z-index:30000;display:none;justify-content:center;align-items:center;animation:fadeInBackdrop 0.3s ease;}.welcome-popup-overlay.show{display:flex;}@keyframes fadeInBackdrop{from{opacity:0;}to{opacity:1;}}.welcome-popup{background:rgba(15,23,42,0.98);backdrop-filter:blur(24px);border-radius:32px;border:2px solid linear-gradient(135deg,#0064ff,#ff3333);max-width:600px;width:90%;max-height:85vh;overflow-y:auto;padding:32px 28px;position:relative;animation:popupSlideIn 0.4s cubic-bezier(0.34,1.2,0.64,1);box-shadow:0 30px 60px rgba(0,0,0,0.5);}@keyframes popupSlideIn{from{opacity:0;transform:scale(0.9) translateY(30px);}to{opacity:1;transform:scale(1) translateY(0);}}.welcome-popup-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:28px;cursor:pointer;color:#94a3b8;transition:all 0.2s;}.welcome-popup-close:hover{color:#ff4466;transform:scale(1.1);}.welcome-popup-icon{font-size:48px;text-align:center;margin-bottom:12px;}.welcome-popup h3{font-size:1.8rem;text-align:center;background:linear-gradient(135deg,#0064ff,#ff3333);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px;}.welcome-subtitle{text-align:center;color:#94a3b8;font-size:0.85rem;margin-bottom:24px;}.welcome-offers-grid{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}.welcome-offer-card{display:flex;align-items:center;gap:16px;background:rgba(0,100,255,0.08);border:1px solid rgba(0,100,255,0.2);border-radius:20px;padding:14px 18px;cursor:pointer;transition:all 0.25s ease;}.welcome-offer-card:hover{background:rgba(0,100,255,0.2);border-color:#ff3333;transform:translateX(8px) scale(1.01);}.welcome-offer-card .offer-icon{font-size:32px;min-width:50px;text-align:center;}.welcome-offer-card .offer-info{flex:1;}.welcome-offer-card .offer-title{font-weight:700;font-size:1.1rem;margin-bottom:4px;color:#eef2ff;}.welcome-offer-card .offer-price{font-size:0.8rem;color:#ffd700;font-weight:600;}.welcome-offer-card .offer-desc{font-size:0.7rem;color:#94a3b8;margin-top:4px;}.welcome-dismiss-btn{width:100%;padding:14px;background:linear-gradient(135deg,#0064ff,#0050cc);border:none;border-radius:40px;color:white;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;margin-top:8px;}.welcome-dismiss-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,100,255,0.3);}.welcome-hint{text-align:center;font-size:0.65rem;color:#5a6a82;margin-top:16px;}body.light-mode .welcome-popup{background:rgba(255,255,255,0.98);}body.light-mode .welcome-offer-card .offer-title{color:#1e293b;}
-</style>
-
-<!-- ========== REMAINING ORIGINAL SCRIPTS (Loader, Theme, Canvas, Popups, etc.) ========== -->
-<script>
-  // Theme, popups, canvas, loader, drag, etc. (preserved from original)
+  // Theme toggle
   const themeToggleBtn = document.getElementById('themeToggleBtn');
   function setTheme(isDark) {
     if (isDark) { document.body.classList.remove('light-mode'); localStorage.setItem('theme', 'dark'); if(themeToggleBtn){themeToggleBtn.innerHTML='<i class="fas fa-sun"></i> <span id="themeText">Light</span>';} } 
@@ -919,7 +947,7 @@
   }
   if(localStorage.getItem('theme') === 'light') setTheme(false); else setTheme(true);
   if(themeToggleBtn) themeToggleBtn.addEventListener('click', () => setTheme(document.body.classList.contains('light-mode')));
-  
+
   // Popups
   const forexPortalBtnHead = document.getElementById('forexPortalBtnHeader');
   const affiliatePopupDiv = document.getElementById('affiliatePopup');
@@ -998,36 +1026,89 @@
   
   const stylePulse = document.createElement('style'); stylePulse.textContent = `@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,51,51,0.7); } 70% { box-shadow: 0 0 0 15px rgba(255,51,51,0); } 100% { box-shadow: 0 0 0 0 rgba(255,51,51,0); } }`; document.head.appendChild(stylePulse);
   
-  // ========== WELCOME POPUP INITIALIZATION ==========
-  (function() {
-    const lastShownWelcome = localStorage.getItem('welcomePopupShown');
-    const nowTime = Date.now();
-    const twentyFour = 24*60*60*1000;
-    function showWelcome() { const pop = document.getElementById('welcomeBurnerPopup'); if(pop) pop.classList.add('show'); }
-    function hideWelcome() { const pop = document.getElementById('welcomeBurnerPopup'); if(pop) pop.classList.remove('show'); localStorage.setItem('welcomePopupShown', nowTime.toString()); }
-    setTimeout(() => { if(!lastShownWelcome || (nowTime - parseInt(lastShownWelcome)) > twentyFour) showWelcome(); }, 5000);
-    const closeWelBtn = document.getElementById('closeWelcomePopup'); const dismissWel = document.getElementById('dismissWelcomePopup');
-    if(closeWelBtn) closeWelBtn.addEventListener('click', hideWelcome);
-    if(dismissWel) dismissWel.addEventListener('click', hideWelcome);
-    const overlayWel = document.getElementById('welcomeBurnerPopup');
-    if(overlayWel) overlayWel.addEventListener('click', (e) => { if(e.target === overlayWel) hideWelcome(); });
-    function scrollToSectionWel(sectionId){
-      hideWelcome();
-      setTimeout(() => {
-        let el = null;
-        if(sectionId === 'kairon') el = document.getElementById('kaironSection') || document.getElementById('openKaironBtn');
-        else if(sectionId === 'forexbot') el = document.getElementById('forex-bot');
-        else if(sectionId === 'classes') el = document.getElementById('live-classes');
-        else if(sectionId === 'deriv') el = document.getElementById('deriv-tools');
-        else if(sectionId === 'affiliate') { const btnAff = document.getElementById('forexPortalBtnHeader'); if(btnAff) btnAff.click(); return; }
-        if(el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); el.style.transition = 'box-shadow 0.3s'; el.style.boxShadow = '0 0 0 3px #0064ff, 0 0 0 6px #ff3333'; setTimeout(() => el.style.boxShadow = '', 1500); }
-      }, 300);
-    }
-    document.querySelectorAll('.welcome-offer-card').forEach(card => { card.addEventListener('click', function(){ scrollToSectionWel(this.getAttribute('data-section')); }); });
-    if(!document.getElementById('kaironSection') && document.getElementById('openKaironBtn')){
-      const anchor = document.createElement('div'); anchor.id = 'kaironSection'; anchor.style.position = 'relative'; anchor.style.top = '-80px'; anchor.style.visibility = 'hidden'; anchor.style.height = '0'; document.getElementById('openKaironBtn').parentNode.insertBefore(anchor, document.getElementById('openKaironBtn'));
-    }
-  })();
+  // Form submission handlers (all contact methods now Telegram)
+  function sendViaTelegram(username, message) { window.open(`https://t.me/${username}?text=${encodeURIComponent(message)}`, '_blank'); }
+
+  // Copy Trading Form
+  const copyForm = document.getElementById('copyTradingForm');
+  if (copyForm) {
+    copyForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('copyName')?.value || '';
+      const phone = document.getElementById('copyPhone')?.value || '';
+      const platform = document.getElementById('copyPlatform')?.value || '';
+      const deposit = document.getElementById('copyDeposit')?.value || '';
+      const msg = document.getElementById('copyMessage')?.value || '';
+      const fullMessage = `Copy Trading Request\nName: ${name}\nPhone: ${phone}\nPlatform: ${platform}\nDeposit: ${deposit}\nMessage: ${msg}`;
+      sendViaTelegram('mentor_calekyz', fullMessage);
+      closeCopyModal();
+    });
+  }
+  // Custom Bot Form
+  const botForm = document.getElementById('customBotForm');
+  if (botForm) {
+    botForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('botName')?.value || '';
+      const email = document.getElementById('botEmail')?.value || '';
+      const desc = document.getElementById('botDescription')?.value || '';
+      const budget = document.getElementById('botBudget')?.value || '';
+      const fullMessage = `Custom Bot Request\nName: ${name}\nEmail: ${email}\nDescription: ${desc}\nBudget: ${budget}`;
+      sendViaTelegram('mentor_calekyz', fullMessage);
+      closeBotModal();
+    });
+  }
+  // Class Enrollment Form
+  const classForm = document.getElementById('classEnrollmentForm');
+  if (classForm) {
+    classForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const pkg = document.getElementById('classPackage')?.value || '';
+      const name = document.getElementById('className')?.value || '';
+      const phone = document.getElementById('classPhone')?.value || '';
+      const payment = document.getElementById('classPaymentMethod')?.value || '';
+      const txRef = document.getElementById('classTxRef')?.value || '';
+      const fullMessage = `Class Enrollment\nPackage: ${pkg}\nName: ${name}\nPhone: ${phone}\nPayment: ${payment}\nTxRef: ${txRef}`;
+      sendViaTelegram('mentor_calekyz', fullMessage);
+      closeClassModal();
+    });
+  }
+  // Free Bot Application Form
+  const freeBotFormEl = document.getElementById('freeBotApplicationForm');
+  if (freeBotFormEl) {
+    freeBotFormEl.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('freeBotName')?.value || '';
+      const email = document.getElementById('freeBotEmail')?.value || '';
+      const mt5Id = document.getElementById('freeBotMt5Id')?.value || '';
+      const confirmed = document.getElementById('freeBotConfirm')?.checked;
+      if (!name || !email || !mt5Id) { alert('❌ Please fill in all fields.'); return; }
+      if (!confirmed) { alert('❌ Please confirm that you have created your forex account using the affiliate link above.'); return; }
+      const message = `*NEW FREE BOT APPLICATION*\nName: ${name}\nEmail: ${email}\nMT5 Login ID: ${mt5Id}\nConfirmed account created via affiliate link: Yes\nPlease integrate bot.`;
+      sendViaTelegram('mentor_calekyz', message);
+      alert('✅ Application sent! I will contact you on Telegram within 12 hours.');
+      freeBotFormEl.reset();
+    });
+  }
+  // Kairon Purchase Form
+  const kaironFormEl = document.getElementById('kaironPurchaseForm');
+  if (kaironFormEl) {
+    kaironFormEl.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('kaironEmail')?.value || '';
+      const password = document.getElementById('kaironPassword')?.value || '';
+      const paymentMethod = document.getElementById('kaironPaymentMethod')?.value || '';
+      const proof = document.getElementById('kaironProof')?.value || '';
+      if (!email || !password || !paymentMethod || !proof) { alert('❌ Please fill in all fields.'); return; }
+      const message = `*KAIRON SYSTEMS ANALYSIS PURCHASE*\nProduct: Advanced Market Prediction + Bot Integration\nPrice: $65 USD (8,500 KSH)\nEmail: ${email}\nDesired Password: ${password}\nPayment Method: ${paymentMethod}\nPayment Proof: ${proof}\nPlease send access credentials.`;
+      sendViaTelegram('mentor_calekyz', message);
+      alert('✅ Request sent! I will respond shortly.');
+      kaironFormEl.reset();
+      document.getElementById('mpesaInstructions')?.classList.remove('show');
+      document.getElementById('cryptoInstructions')?.classList.remove('show');
+      document.getElementById('kaironPopup')?.classList.remove('show');
+    });
+  }
 
   // ========== FRONT PAGE OVERLAY CONTROLS ==========
   document.addEventListener('DOMContentLoaded', function() {
