@@ -60,8 +60,8 @@
       height: 90px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid #0064ff;
-      box-shadow: 0 0 30px rgba(0,100,255,0.4);
+      border: 2px solid #8b5cf6;
+      box-shadow: 0 0 30px rgba(139,92,246,0.4);
       margin-bottom: 20px;
     }
     .front-title {
@@ -74,13 +74,13 @@
       color: transparent;
     }
     .front-title span {
-      background: linear-gradient(135deg, #0064ff, #ff3333);
+      background: linear-gradient(135deg, #8b5cf6, #ff3333);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
     .front-sub {
-      color: var(--text-secondary);
+      color: #f0f0f0;
       font-size: 1rem;
       margin-bottom: 32px;
       line-height: 1.5;
@@ -127,31 +127,33 @@
       font-size: 0.95rem;
     }
     .front-btn-trade {
-      background: linear-gradient(135deg, #0064ff, #0050cc);
+      background: linear-gradient(135deg, #8b5cf6, #6d28d9);
       color: white;
-      box-shadow: 0 8px 20px rgba(0,100,255,0.3);
+      box-shadow: 0 8px 20px rgba(139,92,246,0.3);
     }
     .front-btn-trade:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,100,255,0.5);
+      box-shadow: 0 12px 30px rgba(139,92,246,0.5);
     }
     .front-btn-trade-alt {
-      background: linear-gradient(135deg, #00b894, #00a381);
+      background: linear-gradient(135deg, #10b981, #059669);
       color: white;
-      box-shadow: 0 8px 20px rgba(0,184,148,0.3);
+      box-shadow: 0 8px 20px rgba(16,185,129,0.3);
     }
     .front-btn-trade-alt:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,184,148,0.5);
+      box-shadow: 0 12px 30px rgba(16,185,129,0.5);
     }
     .front-btn-telegram {
-      background: linear-gradient(135deg, #0088cc, #006699);
-      color: white;
-      box-shadow: 0 8px 20px rgba(0,136,204,0.3);
+      background: white;
+      color: #ff3333;
+      border: 2px solid #ff3333;
     }
     .front-btn-telegram:hover {
+      background: #ff3333;
+      color: white;
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,136,204,0.5);
+      box-shadow: 0 12px 30px rgba(255,51,51,0.5);
     }
     .front-btn-offers {
       background: linear-gradient(135deg, #ff3333, #cc0000);
@@ -165,8 +167,110 @@
     .front-hint {
       margin-top: 28px;
       font-size: 0.7rem;
-      color: var(--text-secondary);
+      color: #ffffff;
       opacity: 0.7;
+    }
+
+    /* Binary Popup Styles */
+    .binary-popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(12px);
+      z-index: 1000000;
+      justify-content: center;
+      align-items: center;
+    }
+    .binary-popup-overlay.show {
+      display: flex;
+    }
+    .binary-popup {
+      background: rgba(15, 23, 42, 0.98);
+      backdrop-filter: blur(20px);
+      border-radius: 32px;
+      border: 1px solid rgba(139,92,246,0.5);
+      max-width: 420px;
+      width: 90%;
+      padding: 32px 24px;
+      text-align: center;
+      animation: popupFadeIn 0.3s ease-out;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    }
+    .binary-popup h3 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #8b5cf6, #10b981);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .binary-popup p {
+      color: #cbd5e1;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    .binary-options {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .binary-option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 20px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .binary-option i {
+      font-size: 1.2rem;
+    }
+    .binary-option-matchestool {
+      background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+      box-shadow: 0 8px 20px rgba(139,92,246,0.3);
+    }
+    .binary-option-matchestool:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(139,92,246,0.5);
+    }
+    .binary-option-pipnexai {
+      background: linear-gradient(135deg, #10b981, #059669);
+      box-shadow: 0 8px 20px rgba(16,185,129,0.3);
+    }
+    .binary-option-pipnexai:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(16,185,129,0.5);
+    }
+    .binary-close-btn {
+      background: rgba(255,255,255,0.05);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 40px;
+      color: #cbd5e1;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .binary-close-btn:hover {
+      background: #ff4466;
+      color: white;
+    }
+    @keyframes popupFadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     /* Floating Telegram button (always visible) */
@@ -536,11 +640,11 @@
     <div class="front-buttons">
       <!-- Trade options: two buttons side by side -->
       <div class="front-trade-options">
-        <a href="https://app.pipnexai.com" target="_blank" class="front-btn front-btn-trade">
-          <i class="fas fa-rocket"></i> app.pipnexai.com
-        </a>
+        <button id="tradeBinaryBtn" class="front-btn front-btn-trade">
+          <i class="fas fa-robot"></i> Trade Binary
+        </button>
         <a href="https://piptraderai.com" target="_blank" class="front-btn front-btn-trade-alt">
-          <i class="fas fa-chart-line"></i> piptraderai.com
+          <i class="fas fa-chart-line"></i> Trade Forex
         </a>
       </div>
       
@@ -552,6 +656,23 @@
       </button>
     </div>
     <div class="front-hint">🔒 Secure &bull; Institutional-grade &bull; 24/7</div>
+  </div>
+</div>
+
+<!-- ========== BINARY POPUP ========== -->
+<div id="binaryPopup" class="binary-popup-overlay">
+  <div class="binary-popup">
+    <h3>Choose Binary Platform</h3>
+    <p>Select one of the options below to start trading binary.</p>
+    <div class="binary-options">
+      <a href="https://matchestool.site" target="_blank" class="binary-option binary-option-matchestool">
+        <i class="fas fa-chart-simple"></i> matchestool.site
+      </a>
+      <a href="https://app.pipnexai.com" target="_blank" class="binary-option binary-option-pipnexai">
+        <i class="fas fa-rocket"></i> app.pipnexai.com
+      </a>
+    </div>
+    <button class="binary-close-btn" id="closeBinaryPopup">Cancel</button>
   </div>
 </div>
 
@@ -1119,6 +1240,32 @@
       checkOffersBtn.addEventListener('click', function() {
         overlay.classList.add('hidden');
         setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 400);
+      });
+    }
+
+    // Binary popup handling
+    const tradeBinaryBtn = document.getElementById('tradeBinaryBtn');
+    const binaryPopup = document.getElementById('binaryPopup');
+    const closeBinaryPopup = document.getElementById('closeBinaryPopup');
+
+    if (tradeBinaryBtn && binaryPopup) {
+      tradeBinaryBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        binaryPopup.classList.add('show');
+      });
+    }
+
+    if (closeBinaryPopup && binaryPopup) {
+      closeBinaryPopup.addEventListener('click', function() {
+        binaryPopup.classList.remove('show');
+      });
+    }
+
+    if (binaryPopup) {
+      binaryPopup.addEventListener('click', function(e) {
+        if (e.target === binaryPopup) {
+          binaryPopup.classList.remove('show');
+        }
       });
     }
   });
